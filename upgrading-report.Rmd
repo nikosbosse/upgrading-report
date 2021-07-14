@@ -155,22 +155,36 @@ abb %>%
 
 \newpage
 
+Background is mostly a list of questions. Why do we need to improve currentforecasts are they not good or don't we know or don't we know what good is? Mightbe good to set up the issues here that your aims will resolve (rather than repeating).
+
+Lots of these points covered in the following sections so suggest a reword withsome of those in mind.Good idea to focus on how the different questions fit together and motivate eachother.Objectives: would drop references to R/R shiny etc
+
+
+
+
 # Abstract 
 
 **Background**
 
-Infectious disease modelling and forecasting can play a critical role in informing public health policy, as was once more highlighted by the COVID-19 pandemic. Improving infectious disease forecasting therefore is an important aim. Three questions are crucial: How can we best evaluate forecasts in order to learn from and improve on past predictions? What should the role of human insight be in infectious disease forecasting and how can we best combine human judgement with model-based inference? How can we best combine different predictions to an ensemble that performs better than any individual forecast. 
+Infectious disease modelling and forecasting can play a critical role in informing public health policy, as was once more highlighted by the COVID-19 pandemic. Improving infectious disease forecasting therefore is an important aim. To do so, it is necessary to have a good understanding for how to evaluate predictions, as well as the necessary tools do so. While there exists an extensive literature on forecast evaluation, appropriate tools and guidelines on how to use them are under-developed. 
+Infectious disease forecasts are usually not only informed by model-based assumptions, but also implicitly by the opinion of the researchers implementing a model. This interplay between human judgement and model-based inference has not been studied in detail. Obtaining a deeper understanding of the relative strengths and weaknesses of human forecasts and model-based approaches, and how to combine them, may therefore yield important insights. 
+Individual predictions, be it from humans or models, usually are combined into ensembles to obtain more robust and accurate forecasts. However, especially for small ensembles, it is not clear which aggregation method should be used and in which circumstances a model should be added to an existing ensemble or left out. 
+
+<!-- Infectious disease modelling and forecasting can play a critical role in informing public health policy, as was once more highlighted by the COVID-19 pandemic. In my PhD I want to improve infectious disease forecasting by focusing on three key areas: forecast evaluation, the role of human insight vs model-based inference in epidemiological forecasting, and combining individual forecasts into ensembles. -->
+
+
+<!-- For my PhD I have developed an R package, scoringutils, which facilitates forecast evaluation in R, and forms the basis for the later chapters. To investigate the role of human insight in infectious disease forecasting, I have collected human predictions of COVID-19 in Germany, Poland, and the UK, and compare these against untuned model-based forecasts. In order to explore ways to combine human insight and model-based inference, I also investigate hybrid predictions. For these, humans predictions of the effective reproduction number Rt get mapped to reported cases and deaths using epidemiological modeling. Lastly, my PhD aims to improve our understanding of model ensembles by comparing model ensembles of different sizes and analysing the characteristics of successful ensembles. -->
 
 
 **Aim**
 
-The aim of this PhD is to improve infectious disease forecasting and its usefulness to public health officials in the UK and other countries. In particular, it aims for a better understanding of how forecasts can best be evaluated, what role human insight should play in infectious disease forecasting and how single predictions can be aggregated to improve forecasting. 
+The aim of this PhD is to improve infectious disease forecasting and its usefulness to public health officials in the UK and other countries. In particular, it aims to improve the way how forecasts can be evaluated, and aims to obtain a deeper understanding of what role human insight should play in infectious disease forecasting and how single predictions can be aggregated to improve forecasting. 
 
 
 **Objectives**
 
-1. Establish appropriate tools to evaluate predictions in `R` and summarise best practices in forecast evaluation. Apply these tools to to evaluate short-term forecasts of COVID-19. 
-2. Collect predictions of COVID-19 from humans in Germany, Poland using an `R shiny` app. Compare these human predictions against model-based forecasts to discern relative strengths and weaknesses of human forecasters vs. model-based approaches
+1. Establish appropriate tools to evaluate predictions and summarise best practices in forecast evaluation. Apply these tools to to evaluate short-term forecasts of COVID-19. 
+2. Collect predictions of COVID-19 from humans in Germany, Poland. Compare these human predictions against model-based forecasts to discern relative strengths and weaknesses of human forecasters vs. model-based approaches
 3. Collect human forecasts of reported cases and deaths from COVID-19 in the UK as well as human predictions of the effective reproduction number $R_t$ to explore ways in which human insight and epidemiological modelling can be combined
 4. Examine how different numbers of forecasts can best be combined to model ensembles and identify circumstances in which individual models contribute most to those ensembles. 
 
@@ -311,7 +325,7 @@ The `scoringutils` package itself is operational and on CRAN. All major function
 
 ## Aim and objective
 
-The second aim of my PhD is to obtain a better understanding of what role should human insight, as opposed to purely model-based inference, play in infectious disease forecasting. The second chapter of my PhD presents a study in which human forecasts of COVID-19 in Germany and Poland have been collected through a self-develooped `R shiny` app and submitted to the German and Polish Forecast Hub alongside two untuned model-based forecasts. By comparing the ensemble of human predictions against model-based forecasts, relative strengths and weaknesses are analysed. 
+The second aim of my PhD is to obtain a better understanding of what role should human insight, as opposed to purely model-based inference, play in infectious disease forecasting. The second chapter of my PhD presents a study in which human forecasts of COVID-19 in Germany and Poland have been collected through a self-developed `R shiny` app and submitted to the German and Polish Forecast Hub alongside two untuned model-based forecasts. By comparing the ensemble of human predictions against model-based forecasts, relative strengths and weaknesses are analysed. 
 
 
 ## Introduction
@@ -464,7 +478,7 @@ The study has received approval from the ethics committee of the London School o
 # Ensemble sizes and optimal ensembles in epidemiological forecasting (Paper 4)
 
 ## Aim and objective
-The fourth aim of this PhD is to obtain a better understanding about how different forecasts can best be combined into a single forecast. In particular, it aims to analyse how the choice of an optimal aggregation method depends on the number and characteristics of available forecasts. This is partly motivated by the fact that the studies in the last two chapters have submitted ensembles of human predictions to the German and Polish Forecast Hub as well as the European Forecast Hub, without having a good understanding of which aggregation method would be the optimal choice. The fourth chapter of my PhD will examine this question by using data previously collected as well as forecasts submitted to the European Forecast Hubs and combining predictions to ensembles of different sizes. 
+For the two previous studies, I submitted ensemble of human predictions to the German and Polish as well as the European Forecast Hub. However, given the low number of participants (especially in the first study) and very heterogeneous predictions, it was unclear what method should be used to aggregate individual forecasts. The fourth aim of this PhD therefore is to obtain a better understanding about how different forecasts can best be combined into a single forecast in similar situations. In particular, it aims to analyse how the choice of an optimal aggregation method depends on the number and characteristics of available forecasts. This is partly motivated by the fact that the studies in the last two chapters have submitted ensembles of human predictions to the German and Polish Forecast Hub as well as the European Forecast Hub, without having a good understanding of which aggregation method would be the optimal choice. The fourth chapter of my PhD will examine this question by using data previously collected as well as forecasts submitted to the European Forecast Hubs and combining predictions to ensembles of different sizes. 
 
 ## Introduction
 
@@ -497,7 +511,7 @@ In the beginning I intend to start with simple mean and median ensembles, but th
 
 ## Expected Results
 
-I hope to identify a relation between ensemble size and optimal ensemble type as well as conditions under which adding a model to an ensemble is beneficial. In addition I hope to be able to point out characteristics of ensembles that lead to better average performance or increased robustness in performance. - Whether or not a model makes a positive contribution to an ensemble may well depend on the ensemble type. For a median ensemble, it is only important that a model shifts the ensemble in the correct direction, whereas for a median the magnitute of that shift matters. It therefore seems that it may be easier for a model to contribute to a median ensemble, as only the direction of the forecast with respect to the average forecast needs to be correct, not the absolute level. 
+I hope to identify a relation between ensemble size and optimal ensemble type as well as conditions under which adding a model to an ensemble is beneficial. In addition I hope to be able to point out characteristics of ensembles that lead to better average performance or increased robustness in performance. Whether or not a model makes a positive contribution to an ensemble may well depend on the ensemble type. For a median ensemble, it is only important that a model shifts the ensemble in the correct direction, whereas for a median the magnitute of that shift matters. It therefore seems that it may be easier for a model to contribute to a median ensemble, as only the direction of the forecast with respect to the average forecast needs to be correct, not the absolute level. 
 
 ## Limitations
 
@@ -509,6 +523,8 @@ Data is readily available, but work on this study has not yet started.
 
 
 <!-- horizontal or vertical combination of ensembles? -->
+
+<!-- Also interesting question: is a given ensembling method that is best for WIS also best for logS? If not, what does that tell us? -->
 
 
 <!-- ## Other projects -->
@@ -533,118 +549,64 @@ Data is readily available, but work on this study has not yet started.
 
 ``` {r, out.width = "100%", fig.height = 10, fig.width = 10}
 
-paper1 <- data.frame(
-  start = c(Sys.Date(), 
-            "2021-11-01", 
-            "2021-12-01", 
-            "2022-01-15", 
-            "2022-02-01", 
-            "2022-03-15", 
-            "2022-08-15"),
-  end = c("2021-11-01", 
-          "2021-12-01", 
-          "2022-01-15", 
-          "2022-02-01", 
-          "2022-03-15", 
-          "2022-08-15", 
-          "2022-10-01"),
-  content = c("Complete first Draft", 
-              "Obtain feedback on draft", 
-              "Rework draft", 
-              "Internal peer review", 
-              "Draft update and submission", 
-              "Peer review", 
-              "Revision and resubmission"),
-  group = "1st Paper"
-)
 
-paper2 <- data.frame(
-  start = c(Sys.Date(), 
-            "2021-08-01", 
-            "2021-08-10", 
-            "2021-09-01", 
-            "2022-02-01"),
-  end = c("2021-08-01", 
-          "2021-08-10", 
-          "2021-09-01", 
-          "2022-02-01", 
-          "2022-04-01"),
-  content = c("Complete first draft", 
-              "Internal peer review", 
-              "Rework draft and submit", 
-              "Peer review", 
-              "Revision and resubmission"),
-  group = "2nd Paper"
-)
+paper1 <- list(
+  # list("start", "end", "content", "group"), 
+  list("2020-09-20", "2021-10-15", "R package development", "1st paper"), 
+  list("2021-01-15", "2022-01-01", "Paper writing", "1st paper"), 
+  list("2022-01-01", "2023-01-01", "Submission and review", "1st paper")
+) %>%
+  rbindlist() %>%
+  as.data.frame()
 
-paper3 <- data.frame(
-  start = c(Sys.Date(), 
-            "2021-08-16", 
-            "2021-11-01", 
-            "2022-02-01", 
-            "2022-03-01", 
-            "2022-04-01", 
-            "2022-04-15", 
-            "2022-06-01", 
-            "2022-11-01"), 
-  end = c("2021-08-16", 
-          "2021-11-01", 
-          "2022-02-01", 
-          "2022-03-01", 
-          "2022-04-01", 
-          "2022-04-15", 
-          "2022-06-01", 
-          "2022-11-01", 
-          "2023-01-01"), 
-  content = c("Data collection", 
-              "Data analysis", 
-              "Complete first draft", 
-              "Obtain feedback on draft", 
-              "Rework draft", 
-              "Internal peer review", 
-              "Draft update and submission", 
-              "Peer review", 
-              "Revision and resubmission"),
-  group = "3rd Paper"
-)
+names(paper1) <- c("start", "end", "content", "group")
 
-paper4 <- data.frame(
-  start = c("2021-10-01", 
-            "2022-04-01", 
-            "2022-07-01", 
-            "2022-08-01", 
-            "2022-09-15", 
-            "2022-10-01", 
-            "2022-12-01", 
-            "2023-04-01"), 
-  end = c("2022-04-01", 
-          "2022-07-01", 
-          "2022-08-01", 
-          "2022-09-15", 
-          "2022-10-01", 
-          "2022-12-01", 
-          "2023-04-01", 
-          "2023-06-01"), 
-  content = c("Analysis / Simulation Study", 
-              "Write first draft", 
-              "Obtain feedback on draft", 
-              "Rework draft", 
-              "Internal peer review", 
-              "Draft update and submission", 
-              "Peer review", 
-              "Revision and resubmission"),
-  group = "4th Paper"
-)
+
+
+paper2 <- list(
+  # list("start", "end", "content", "group"), 
+  list("2020-10-15", "2021-03-15", "Collecting data", "2nd paper"), 
+  list("2021-03-15", "2021-08-15", "Data analysis", "2nd paper"), 
+  list("2021-03-15", "2021-10-01", "Paper writing", "2nd paper"), 
+  list("2021-10-01", "2022-10-01", "Submission and review", "2nd paper")
+) %>%
+  rbindlist() %>%
+  as.data.frame()
+
+names(paper2) <- c("start", "end", "content", "group")
+
+
+paper3 <- list(
+  # list("start", "end", "content", "group"), 
+  list("2021-05-15", "2021-10-15", "Collecting data", "3rd paper"), 
+  list("2021-10-15", "2022-03-01", "Data analysis", "3rd paper"), 
+  list("2021-11-15", "2022-06-01", "Paper writing", "3rd paper"), 
+  list("2022-06-01", "2023-06-01", "Submission and review", "3rd paper")
+) %>%
+  rbindlist() %>%
+  as.data.frame()
+
+names(paper3) <- c("start", "end", "content", "group")
+
+
+paper4 <- list(
+  # list("start", "end", "content", "group"), 
+  list("2021-10-15", "2022-04-15", "Data analysis", "4th paper"), 
+  list("2022-04-15", "2022-09-15", "Paper writing", "4th paper"), 
+  list("2022-09-15", "2023-09-15", "Submission and review", "4th paper")
+) %>%
+  rbindlist() %>%
+  as.data.frame()
+
+names(paper4) <- c("start", "end", "content", "group")
+
 
 dissertation <- data.frame(
-  start = c("2023-02-01", 
-            "2023-05-01", 
-            "2023-06-01"), 
-  end = c("2023-05-01", 
-          "2023-06-01", 
+  start = c("2022-10-01", 
+            "2023-04-01"), 
+  end = c("2023-04-01", 
           "2023-09-01"), 
-  content = c("First draft", 
-              "Feedback", 
+  content = c("Write dissertation",
               "Revision and final submission"), 
   group = "Dissertation"
 )
@@ -664,6 +626,7 @@ data %>%
                  size = 4) + 
   facet_grid(group ~ ., scales = "free_y", space = "free_y") + 
   theme_minimal() + 
+  geom_vline(xintercept = Sys.Date(), linetype = "dashed") + 
   theme(legend.position = "none") + 
   labs(y = "", x = "") + 
   scale_x_date(date_labels="%b-%y", date_breaks  ="2 month") + 
