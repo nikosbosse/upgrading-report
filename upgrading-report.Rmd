@@ -1,6 +1,6 @@
 ---
 title: |
-  ![](LSHTM-logo.png){width=2.4in}  
+  ![](plots/LSHTM-logo.png){width=2.4in}  
   $~~~~~$
   
   $~~~~~$
